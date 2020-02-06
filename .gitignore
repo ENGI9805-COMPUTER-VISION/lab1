@@ -10,3 +10,4 @@ env/
 ._*
 *.egg
 venv/
+.ipynb_checkpoints/
