@@ -8,8 +8,9 @@ Created on Mon Feb  3 01:32:57 2020
 import cv2
 import numpy as np
 
-def drawLines(input):
-    output = cv2.imread(inputName)  # Remember to add the path for the test1.jpg
+
+def drawLines(filename):
+    output = cv2.imread(filename)  # Remember to add the path for the test1.jpg
     size = output.shape
 
     gray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
