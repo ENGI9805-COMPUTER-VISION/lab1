@@ -1,6 +1,7 @@
 import cv2
 import logging
 import os
+import time
 
 
 class VideoCam:
@@ -14,10 +15,11 @@ class VideoCam:
     def check_camera(self, cap):
         logging.info('Camera {} status: {}'.format(self.url, cap.isOpened()))
 
-    def show_frame(self, frame, name_fr='NAME'):
+    def show_frame(self, frame, name_fr='RESULT'):
         cv2.imshow(name_fr, frame)
         # cv2.imshow(name_fr, cv2.resize(frame, (0, 0), fx=0.4, fy=0.4))
-        cv2.waitKey(1)
+        cv2.waitKey()
+        cv2.destroyAllWindows()
 
     def get_frame(self):
         return self.cap.retrieve()

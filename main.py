@@ -17,7 +17,8 @@ while True:
                 break
             # frame HERE
             saved_file = v1.save_frame(frame)
-            drawLines(saved_file, "frames")
+            res = drawLines(saved_file, "frames")
+            v1.show_frame(res)
     except KeyboardInterrupt:
         v1.close_cam()
         exit(0)
