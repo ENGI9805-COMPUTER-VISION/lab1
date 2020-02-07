@@ -11,6 +11,7 @@ env/
 *.egg
 venv/
 
+.ipynb_checkpoints/
 
 # lab specific
 frames
