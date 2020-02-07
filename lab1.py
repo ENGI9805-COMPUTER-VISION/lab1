@@ -7,13 +7,14 @@ Created on Mon Feb  3 01:32:57 2020
 
 import cv2
 import numpy as np
+import os
 
 
-def drawLines(filename):
-    output = cv2.imread(filename)  # Remember to add the path for the test1.jpg
-    size = output.shape
+def drawLines(filename, path=''):
+    img = cv2.imread(os.path.join(path, filename))  # Remember to add the path for the test1.jpg
+    size = img.shape
 
-    gray = cv2.cvtColor(output, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # 100, 500
     edges = cv2.Canny(gray, 50, 800)  # The parameters are the thresholds for Canny
 
@@ -30,6 +31,7 @@ def drawLines(filename):
         x2 = int(x0 - size[1] * (-b))
         y2 = int(y0 - size[0] * (a))
 
-        cv2.line(output, (x1, y1), (x2, y2), (0, 0, 255), 2)
+        cv2.line(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
 
-    return output
+    cv2.imwrite(os.path.join("results", filename), img)
+    return img

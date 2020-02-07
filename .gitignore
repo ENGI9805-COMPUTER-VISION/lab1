@@ -10,3 +10,8 @@ env/
 ._*
 *.egg
 venv/
+
+
+# lab specific
+frames
+results
