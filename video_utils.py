@@ -1,7 +1,7 @@
-import cv2
 import logging
 import os
-import time
+
+import cv2
 
 
 class VideoCam:

@@ -1,4 +1,4 @@
-from camera import VideoCam
+from video_utils import VideoCam
 from lab1 import drawLines
 
 
