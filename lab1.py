@@ -75,7 +75,7 @@ def process_video():
                     break
                 # frame HERE
                 saved_file = v1.save_frame(frame)
-                res = draw_lines(saved_file, "frames")
+                _, res, __ = draw_lines(saved_file, "frames")
                 v1.show_frame(res)
         except KeyboardInterrupt:
             v1.close_cam()
