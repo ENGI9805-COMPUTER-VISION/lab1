@@ -54,7 +54,7 @@ def draw_intersections(filename, img, lines, output_path="results"):
     segmented = segment_by_angle_kmeans(lines)
     intersections = segmented_intersections(segmented)
     for intersection in intersections:
-        cv2.circle(img, (intersection[0][0], intersection[0][1]), 8, (0, 255, 255), 4)
+        cv2.drawMarker(img, (intersection[0], intersection[1]), (0, 255, 255), cv2.MARKER_DIAMOND, 10, 5)
 
     cv2.imwrite(os.path.join(output_path, filename), img)
     return intersections

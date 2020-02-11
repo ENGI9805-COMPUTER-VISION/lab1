@@ -25,7 +25,7 @@ class VideoCam:
         return self.cap.retrieve()
 
     def save_frame(self, frame):
-        saved_file = "frame{}.jpg".format(self.cap.get(1))
+        saved_file = "frame{}.jpg".format(int(self.cap.get(1) - 1))
         cv2.imwrite(os.path.join("frames", saved_file), frame)
         return saved_file
 
